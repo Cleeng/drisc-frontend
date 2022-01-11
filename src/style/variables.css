@@ -1,0 +1,8 @@
+:root {
+    --background-dark: #313131;
+    --background-light: #484848;
+    --background-error: #101010;
+    --text-light: #d2d2d2;
+    --text-dark: rgba(33, 33, 33, 0.7);
+    --primary: #52ca91;
+}

@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style/variables.css">
+    <link rel="stylesheet" href="style/style.css">
+    <title>Cleeng Example</title>
+</head>
+
+<body>
+<header class="header">
+    <div class="header-column">
+        <figure class="logo"><img src="assets/logo.png" alt="cleeng's logo"></figure>
+    </div>
+    <div class="header-column has-text-centered">
+        <h1 class="title">Dynamic Realtime Identification and Session Control (DRISC) Demo</h1>
+    </div>
+    <div class="header-column has-text-right">
+        <button class="toggle-button" id="options-toggler">
+                <span class="icon is-large">
+                <i class="fas fa-cog fa-2x"></i>
+                </span>
+        </button>
+    </div>
+</header>
+
+<main class="dark-bg">
+    <div class="container is-widescreen main-content">
+        <div class="card is-clickable player-container ">
+            <div class="player-placeholder js-MovieCard">
+                <i class="fas fa-play"></i>
+            </div>
+
+            <div id="videoModal" class="player">
+                <video id="video-player" src="" controls></video>
+                <button class="modal-close player-error-close is-large" id="close-video" aria-label="close"></button>
+            </div>
+
+            <div id="loadingModal" class="player player-loader">
+                <i class="fas fa-spinner"></i>
+            </div>
+
+
+            <div id="modalError" class="player player-error">
+                <header class="player-error-title">
+                    Screen limit
+                </header>
+                <section class="player-error-message">
+                    <p>You have reached your session limit for streaming. If you want to continue streaming, please stop
+                        streaming on the another device or tab.</p>
+                </section>
+                <footer class="player-error-footer js-error-footer">
+                    <!--Take over buttons will show up here-->
+                </footer>
+                <button class="modal-close player-error-close is-large" aria-label="close"></button>
+            </div>
+
+            <div id="takeOverModal" class="player player-error">
+                <header class="player-error-title">
+                    Take over
+                </header>
+                <section class="player-error-message">
+                    <p>It looks like your session is taken over by another device or tab. To continue streaming here, please
+                        stop streaming on another device or tab.</p>
+                </section>
+                <button class="modal-close player-error-close is-large" aria-label="close"></button>
+            </div>
+            <div id="systemErrorModal" class="player player-error">
+                <header class="player-error-title">
+                    Oops...
+                </header>
+                <section class="player-error-message">
+                    <p>Something went wrong</p>
+                </section>
+                <footer class="player-error-footer">
+                    <button class="js-MovieCard button is-light">Refresh</button>
+                </footer>
+                <button class="modal-close player-error-close is-large" aria-label="close"></button>
+            </div>
+        </div>
+    </div>
+    <footer class="player-footer">
+        <h5>Supported devices</h5>
+        <i class="fas fa-globe"></i>
+        <i class="fab fa-apple"></i>
+        <i class="fab fa-android"></i>
+        <i class="fab fa-amazon"></i>
+        <img src="./assets/Roku_logo.svg" alt="roku logo">
+    </footer>
+</main>
+
+<footer class="footer" id="options">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div>
+                    <label class="label" for="customerID">Customer ID</label>
+                    <input id="customerID" class="input" type="number" placeholder="Customer id" value="4">
+                </div>
+            </div>
+
+            <div class="column">
+                <div>
+                    <label class="label" for="publisherID">Publisher ID</label>
+                    <input id="publisherID" class="input" type="number" placeholder="Publisher id" value="123">
+                </div>
+            </div>
+
+            <div class="column">
+                <div>
+                    <label class="label" for="sessionName">Session Name</label>
+                    <input id="sessionName" class="input" type="text" placeholder="Session Name" value="Your favourite TV Drama - S01E01">
+                </div>
+            </div>
+
+            <div class="column">
+                <div>
+                    <label class="label" for="sessionOffer">Offer ID</label>
+                    <input id="sessionOffer" class="input" type="text" placeholder="Offer used to create session" value="S_345678909876_PL">
+                </div>
+            </div>
+
+            <div class="column">
+                <div>
+                    <label class="label" for="sessionTag">Tag</label>
+                    <input id="sessionTag" class="input" type="text" placeholder="Tag used to create session">
+                </div>
+            </div>
+
+            <div class="column" style="display: none">
+                <div>
+                    <label class="label" for="jwtSecret">JWT Secret</label>
+                    <input id="jwtSecret" class="input" type="text" placeholder="secret" value="secret">
+                </div>
+            </div>
+
+            <div class="column" style="display: none">
+                <div>
+                    <label class="label" for="driscEndpoint">Endpoint</label>
+                    <!-- CHANGE FOR THE DEMO URL -->
+                    <input id="driscEndpoint" class="input" type="text" placeholder="Drisc endpoint" value="https://u2vhidbbqb.execute-api.eu-west-1.amazonaws.com/preview">
+                    <!-- CHANGE FOR THE DEMO URL -->
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="scripts/example.js"></script>
+</body>
+</html>
