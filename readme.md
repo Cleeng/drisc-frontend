@@ -1,29 +1,11 @@
-# DRISC integration example
+# DRISC frontend example
 
---------------------------------
-
-📚 This repository contains example of how you can integrate your application to the DRISC server. File `index.html`
-contains all code needed to obtain session with websocket endpoint, reconnect functionality as well as handling for all
-messages sent from or to DRISC Websocket API.  
-`index.js` contains helpers for generating JWT based on inputs on top of the website.
+This repository contains an example of how to use and how to integrate your application with the DRISC server. 
+Dynamic Real-Time Identification & Session Control (DRISC) is an API offering from [Cleeng](https://cleeng.com/) to enable broadcasters to limit the number of active preview sessions based on the currently active plan.
 
 
-📜 Bellow you can find currently supported WS messages
+If You need more information about the DRISC feature or configuration, please contact our support.
 
-```typescript
-enum ServerMessages {
-    OK = {"action":"OK"},
-    TERMINATE = {"action":"TERMINATE"},
-    PING = {"action":"PING"},
-}
-
-enum ClientMessages {
-    REQUESTED = {"action":"REQUESTED"},
-    FINISHED = {"action":"FINISHED"},
-    PONG = {"action":"PONG"},
-}
-```
-
-🌁 Assets are free to use without any additional licence. Source:  
+Assets are free to use without any additional license. Source:  
 https://www.pexels.com/video/video-of-a-jelly-fish-underwater-8856781/  
 https://unsplash.com/photos/XcuKWkUA4-4  
